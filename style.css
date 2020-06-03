@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  background-color: yellow
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+p {
+  text-align: center;
+}
+
+button {
+  border-radius: 50%;
+  background-color: lightgreen;
+  color: black;
+  padding: 15px 32px;
+  font-size: 20px;
+}
+
+#choice1, #choice2, #choice3, #choice4 {
+  padding: 20px;
+  background-color: lightgray;
+  font-size: 20px;
+}
+.container {
+  display: none;
+}
+
+input {
+  height: 50px;
+  width: 100%;
+  padding: 6px;
+  margin-top: 10px;
+  font-size: 2.4em;
+  border: none;
+  }
+
+.initials {
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 40px;
+  }
+
+  
