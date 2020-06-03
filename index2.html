@@ -1,26 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" type="text/css" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" type="text/css" rel="stylesheet" />
     <title>HighScores</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>HighScores</h1>
-        <div class="initials">
-            <form id="enterHighScore" method="POST">
-                <label for="initials-text">You did it!</label>
-                <input type="text" placeholder="Enter your initials and score here" name="initials-text" id="initialsText">
-            </form>
-        </div>
-    <hr>
-        <ul id="highScoresList"></ul>
-        <p>
-            <button id="clearScores">Clear Scores</button>
-            <a href="index.html"><button id="goBack">Go Back</button></a>
-        </p> 
+    <div class="initials">
+      <form id="enterHighScore" method="POST">
+        <label for="initials-text">You won!</label>
+        <input
+          type="text"
+          placeholder="Enter your initials and score here"
+          name="initials-text"
+          id="initialsText"
+        />
+      </form>
+    </div>
+    <hr />
+    <ul id="highScoresList"></ul>
+    <p>
+      <button id="clearScores">Erase Scores</button>
+      <a href="index.html"><button id="goBack">Go Back</button></a>
+    </p>
 
     <script src="script.js" type="text/javascript"></script>
-</body>
+  </body>
 </html>

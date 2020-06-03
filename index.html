@@ -1,59 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" type="text/css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" type="text/css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
 
-    <title>Coding Quiz</title>
+  <title>Coding Quiz</title>
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index2.html">Highscores</a>
-          <div class="collapse navbar-collapse" id="navbarText">
-            <p class="navbar-text">
-            Timer: <span id="timer">0</span>
-            </p>
-        </div>
-      </nav>
-    <main id="main">
-      <h1>Code Quiz!</h1>
-        <p> Click the Start Button below to begin answering the following code-related questions.
-          </p>
-        <p> 
-            For every incorrect answer your time  will be penalized by 10 seconds!
-          </p>
-          <hr>
-        <p> <button id="startQuiz">Start Quiz Now!</button>
-          </p>
-    </main>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index2.html">Highscores</a>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <p class="navbar-text">
+        Timer: <span id="timer">0</span>
+      </p>
+    </div>
+  </nav>
+  <main id="main">
+    <h1>Code Quiz!</h1>
+    <p> Click the Start Button below to begin answering the following code-related questions.
+    </p>
+    <p>
+      For every incorrect answer your time will be penalized by 10 seconds!
+    </p>
+    <hr>
+    <p> <button id="startQuiz">Start Quiz Now!</button>
+    </p>
+  </main>
 
-    <!-- hidden code for the questions -->
-      <section class="container" id= "questions"> 
-        <h2 id="questionTitle"></h2>
-          <hr>
-          <br>
-          <p id="choices">
-            <p id="choice1">
-            </p> 
-              <br>
-              <p id="choice2">
-              </p>
-                <br>
-                <p id="choice3">
-                </p>
-                  <br>
-                  <p id="choice4">
-                  </p>
-          </p>
-          <hr>
-            <p id="feedback">
-            </p>
-      </section>
+  <!-- hidden code for the questions -->
+  <section class="container" id="questions">
+    <h2 id="questionTitle"></h2>
+    <hr>
+    <br>
+    <p id="choices">
+      <p id="choice1">
+      </p>
+      <br>
+      <p id="choice2">
+      </p>
+      <br>
+      <p id="choice3">
+      </p>
+      <br>
+      <p id="choice4">
+      </p>
+    </p>
+    <hr>
+    <p id="feedback">
+    </p>
+  </section>
 
-    <script src="script.js" type="text/javascript"></script>
+  <script src="script.js" type="text/javascript"></script>
 </body>
+
 </html>

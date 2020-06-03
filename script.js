@@ -1,4 +1,3 @@
-
 var startButton = document.querySelector("#startQuiz");
 
 var backButton = document.querySelector("#goBack");
@@ -23,24 +22,24 @@ var highScores = document.getElementById("highScoresList");
 
 
 
-var myQuestions = [
-   {
+var myQuestions = [{
       question: "What is a sequence of instructions that performs a specific task, packaged as a unit?",
       choices: ["Variable", "Function", "Loop", "If Statement"],
       answer: "Function"
    },
    {
       question: "Each element in an array has a numbered position known as it's...",
-      choices:["parameter", "list", "iterator variable", "index"],
+      choices: ["parameter", "list", "iterator variable", "index"],
       answer: "index"
    },
-   {  question:"The values that are passed to the function when it is called are...",
-      choices: ["returns", "arguements", "arrays","swtich statements"],
-      answer:"arguements"
+   {
+      question: "The values that are passed to the function when it is called are...",
+      choices: ["returns", "arguments", "arrays", "switch statements"],
+      answer: "arguments"
    },
    {
-      question:"Which loop is best to use when you need to perform a task for every item in a list, or when the order of things must be maintained?",
-      choices: ["For each loop", "While loop","For loop","Loop loop"],
+      question: "Which loop is best to use when you need to perform a task for every item in a list, or when the order of things must be maintained?",
+      choices: ["For each loop", "While loop", "For loop", "Loop loop"],
       answer: "For each loop"
    }
 ];
@@ -52,29 +51,29 @@ var secondsLeft = 40
 var answer = myQuestions[i].answer
 
 
-startButton.addEventListener("click", function(){
+startButton.addEventListener("click", function () {
    startQuiz();
 });
 
 
 function setTime() {
-   var timerInterval = setInterval(function() {
+   var timerInterval = setInterval(function () {
       secondsLeft--;
       clock.textContent = secondsLeft
-      if(secondsLeft === 0){
+      if (secondsLeft === 0) {
          window.open("index2.html", "_self");
       };
-   },1000)
+   }, 1000)
 };
 
 
 function startQuiz() {
-      mainEl.setAttribute("class","container");
-      mainEl.append(questionSec);
-      questionContainer.removeAttribute("class");
-      setTime();
-      getQuestion();
-   };
+   mainEl.setAttribute("class", "container");
+   mainEl.append(questionSec);
+   questionContainer.removeAttribute("class");
+   setTime();
+   getQuestion();
+};
 
 
 function getQuestion() {
@@ -88,59 +87,59 @@ function getQuestion() {
    choice3.textContent = thirdChoice.choices[2];
    var fourthChoice = myQuestions[i];
    choice4.textContent = fourthChoice.choices[3];
+};
+
+
+choice1.addEventListener("click", function (event) {
+
+   var answer = myQuestions[i].answer
+   if (answer === event.target.textContent) {
+      nextQuestion();
+   } else {
+      showFeedback();
+      nextQuestion();
    };
-
-
-   choice1.addEventListener ("click", function (event) {
-       
-       var answer = myQuestions[i].answer
-       if (answer === event.target.textContent) {
-          nextQuestion();
-       } else {
-          showFeedback();
-          nextQuestion();
-       };
-     }); 
-    choice2.addEventListener ("click", function (event) {
-      var answer = myQuestions[i].answer
-      if (answer === event.target.textContent) {
-         nextQuestion();
-      } else {
-         showFeedback();
-         nextQuestion();
-      };
-    });
-    choice3.addEventListener ("click", function (event) {
-      var answer = myQuestions[i].answer
-      if (answer === event.target.textContent) {
-         nextQuestion();
-      } else {
-         showFeedback();
-         nextQuestion();
-      };
-    });
-    choice4.addEventListener ("click", function (event) {
-      var answer = myQuestions[i].answer
-      if (answer === event.target.textContent) {
-         nextQuestion();
-      } else {
-         showFeedback();
-         nextQuestion();
-      };
-    });
+});
+choice2.addEventListener("click", function (event) {
+   var answer = myQuestions[i].answer
+   if (answer === event.target.textContent) {
+      nextQuestion();
+   } else {
+      showFeedback();
+      nextQuestion();
+   };
+});
+choice3.addEventListener("click", function (event) {
+   var answer = myQuestions[i].answer
+   if (answer === event.target.textContent) {
+      nextQuestion();
+   } else {
+      showFeedback();
+      nextQuestion();
+   };
+});
+choice4.addEventListener("click", function (event) {
+   var answer = myQuestions[i].answer
+   if (answer === event.target.textContent) {
+      nextQuestion();
+   } else {
+      showFeedback();
+      nextQuestion();
+   };
+});
 
 
 function nextQuestion() {
-      i++;
-      getQuestion();
+   i++;
+   getQuestion();
 };
 
 
 function showFeedback() {
    feedBack.textContent = feed
-    if (feed) {
-   secondsLeft -= 10;
-    };
+   if (feed) {
+      secondsLeft -= 10;
+   };
 };
 
 
@@ -150,62 +149,62 @@ var scores = [];
 init();
 
 function renderScores() {
-  highScores.innerHTML = "";
+   highScores.innerHTML = "";
 
 
-  for (var i = 0; i < scores.length; i++) {
-    var high = scores[i];
+   for (var i = 0; i < scores.length; i++) {
+      var high = scores[i];
 
-    var li = document.createElement("li");
-    li.textContent = high;
-    li.setAttribute("data-index", i);
+      var li = document.createElement("li");
+      li.textContent = high;
+      li.setAttribute("data-index", i);
 
-    highScores.appendChild(li);
-  };
+      highScores.appendChild(li);
+   };
 };
 
 function init() {
- 
-  var storedHighScores = JSON.parse(localStorage.getItem("scores"));
-  
-  if (storedHighScores !== null) {
-    scores = storedHighScores;
-  };
- 
-  renderScores();
+
+   var storedHighScores = JSON.parse(localStorage.getItem("scores"));
+
+   if (storedHighScores !== null) {
+      scores = storedHighScores;
+   };
+
+   renderScores();
 };
 
 function storeScores() {
-  
-  localStorage.setItem("scores", JSON.stringify(scores));
+
+   localStorage.setItem("scores", JSON.stringify(scores));
 };
 
 
-enter.addEventListener("submit", function(event) {
-  event.preventDefault();
-  var scoresText = highScoresText.value.trim();
-  
-  if (scoresText === "") {
-    return;
-  };
- 
-  scores.push(scoresText);
-  highScoresText.value = "";
-  
-  storeScores();
-  renderScores();
+enter.addEventListener("submit", function (event) {
+   event.preventDefault();
+   var scoresText = highScoresText.value.trim();
+
+   if (scoresText === "") {
+      return;
+   };
+
+   scores.push(scoresText);
+   highScoresText.value = "";
+
+   storeScores();
+   renderScores();
 });
 
 
-clearButton.addEventListener("click", function(event) {
-  var element = event.target;
- 
-  if (element.matches("click") === true) {
-   
-   var index = element.parentElement.getAttribute("data-index");
-    scores.splice(index, 1);
-    
-    storeScores();
-    renderScores();
-  };
+clearButton.addEventListener("click", function (event) {
+   var element = event.target;
+
+   if (element.matches("click") === true) {
+
+      var index = element.parentElement.getAttribute("data-index");
+      scores.splice(index, 1);
+
+      storeScores();
+      renderScores();
+   };
 });
